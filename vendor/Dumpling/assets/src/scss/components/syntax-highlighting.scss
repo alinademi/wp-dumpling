@@ -1,0 +1,40 @@
+@import '../variables/variables';
+
+.dump-block__syntax {
+  margin: var(--dp--spacing-medium);
+
+  .dump-block__code {
+    all: unset;
+    color: var(--dp--code--fg-color);
+    background-color: transparent;
+    font-family: var(--dp--font-family);
+    font-size: var(--dp--font-size-small);
+    line-height: 2;
+    tab-size: 0;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-radius: var(--dp--border-radius);
+    padding: var(--dp--spacing-medium);
+
+    .operator {
+      color: var(--dp--code--operator-color);
+    }
+
+    .bracket {
+      color: var(--dp--code--bracket-color);
+    }
+
+    .key {
+      color: var(--dp--code--key-color);
+    }
+
+    .parenthesis {
+      color: var(--dp--code--parenthesis-color);
+    }
+
+    .brace {
+      color: var(--dp--code--brace-color);
+    }
+  }
+}

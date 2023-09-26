@@ -1,0 +1,20 @@
+{
+  "--dp--code--fg-color": "#24292f",
+  "--dp--code--operator-color": "#28a745",
+  "--dp--code--bracket-color": "#0598bc",
+  "--dp--code--key-color": "#5a32a3",
+  "--dp--code--parenthesis-color": "#d73a49",
+  "--dp--code--brace-color": "#dbab09",
+  "--dp--code--bg-color": "#ffffff",
+  "--dp--main-container--border-color": "#24292e",
+  "--dp--header--bg-color": "#24292e",
+  "--dp--header--border-color": "#34393d",
+  "--dp--header--collapse-icon-color": "#34393d",
+  "--dp--header--fg-color": "#dbab09",
+  "--dp--control-button--bg-color": "#0366d6",
+  "--dp--control-button--bg-hover": "#2573d8",
+  "--dp--control-button--fg-color": "#ffffff",
+  "--dp--close-modal--bg-color": "#d73a49",
+  "--dp--close-modal--bg-hover": "#e84b53",
+  "--dp--close-modal--fg-color": "#24292f"
+}

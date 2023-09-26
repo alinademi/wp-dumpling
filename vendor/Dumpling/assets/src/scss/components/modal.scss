@@ -1,0 +1,58 @@
+@import '../variables/variables';
+
+
+@mixin modal-style($position: relative, $top: auto, $right: auto, $bottom: auto, $left: auto, $transform: none) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  transform: $transform;
+}
+
+.dump-block__modal {
+  @include modal-style(fixed);
+  z-index: 9999;
+
+  &--center {
+    @include modal-style(fixed, 50%, 50%, auto, auto, translate(-50%, -50%));
+    width: 50vw;
+    height: 75vh;
+  }
+
+  &--top-left {
+    width: 40vw;
+    height: 40vh;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  &--top-right {
+    width: 40vw;
+    height: 40vh;
+    top: 0;
+    right: 0;
+    left: auto;
+    transform: none;
+  }
+
+  &--bottom-left {
+    width: 40vw;
+    height: 40vh;
+    bottom: 0;
+    left: 0;
+    top: auto;
+    transform: none;
+  }
+
+  &--bottom-right {
+    width: 40vw;
+    height: 40vh;
+    bottom: 0;
+    right: 0;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+}

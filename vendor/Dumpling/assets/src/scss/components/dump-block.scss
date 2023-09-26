@@ -1,0 +1,90 @@
+@import '../variables/variables';
+
+.dump-block {
+  z-index: 99999 !important;
+  background-color: var(--dp--code--bg-color);
+  border: var(--dp--border-1) solid var(--dp--main-container--border-color);
+  border-radius: var(--dp--main-container--border-radius);
+  margin: var(--dp--spacing-medium);
+  max-width: 60vh;
+  max-height: 80vh;
+  overflow: auto;
+  box-shadow: 0 0 0 1px rgba(27, 31, 35, 0.15), 0 8px 24px rgba(149, 157, 165, 0.2);
+
+  & * {
+    font-family: var(--dp--font-family);
+  }
+
+  &__ctrl-outer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 0.5rem;
+    background-color: var(--dp--header--bg-color);
+    position: sticky;
+    top: 41px;
+    z-index: 10;
+    color: var(--dp--main-container--border-color);
+
+    p {
+      font-size: var(--dp--font-size-small);
+      margin: var(--dp--spacing-none);
+      color: var(--dp--code--fg-color);
+    }
+  }
+
+  &__ctrl-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--dp--spacing-medium);
+  }
+
+  &__summary {
+    display: flex;
+    align-items: center;
+    min-width: 360px;
+    min-height: 80px;
+    color: var(--dp--header--fg-color);
+    font-size: 1.25rem;
+    padding-left: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--dp--header--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    &::before {
+      content: "▶︎";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+      font-size: 1.25rem;
+      color: var(--dp--header--collapse-icon-color);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &[open] {
+    .dump-block__summary {
+      min-width: unset;
+      min-height: 40px;
+      height: 40px;
+      box-sizing: content-box;
+      border-bottom: 1px solid var(--dp--header--border-color);
+
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100vw - 2rem);
+    margin: 0;
+  }
+}

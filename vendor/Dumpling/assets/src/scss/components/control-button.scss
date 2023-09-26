@@ -1,0 +1,47 @@
+@import '../variables/variables';
+
+.dump-block__control-button {
+  appearance: none;
+  background-color: var(--dp--code--fg-color);
+  border: 1px solid var(--dp--code--bg-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--dp--control-button--fg-color);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 0;
+  padding: 0;
+  transition: filter 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+
+  &:hover {
+    // background-color: var(--dp--control-button--bg-hover);
+    filter: invert(100%);
+  }
+
+  &--close {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: var(--dp--border-radius-4);
+    padding: 0;
+    margin: -36px 7px 0 0;
+    background-color: var(--dp--code--parenthesis-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: var(--dp--close-modal--bg-hover);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--dp--color-white);
+    }
+  }
+}

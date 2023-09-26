@@ -1,0 +1,22 @@
+# Ignore Node.js dependencies
+**/node_modules/
+
+# Ignore IDE and editor-specific files
+.idea/
+.vscode/
+
+# Ignore log files
+vendor/Dumpling/logs
+*.log
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+Icon?
+
+
+# Ignore any other temporary or generated files
+*~
+*.swp
+*.bak
+*.tmp

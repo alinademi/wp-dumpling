@@ -1,0 +1,53 @@
+@import '../variables/variables';
+
+
+.dump-block__button-svg {
+  width: 36px;
+  height: 36px;
+
+  .outer-square {
+    rx: 2px;
+    ry: 2px;
+    x: 1px;
+    y: 1px;
+    width: 34px;
+    height: 34px;
+    stroke: var(--dp--code--bg-color);
+    stroke-width: 1px;
+    fill: none;
+    border-radius: var(--dp--border-radius-4);
+  }
+
+  .inner-square {
+    border-radius: var(--dp--border-radius-4);
+    fill: var(--dp--code--bg-color);
+    border-radius: var(--dp--border-radius-4);
+    width: 10px;
+    height: 10px;
+
+    &--center {
+      x: 12px;
+      y: 12px;
+    }
+
+    &--top-left {
+      x: 5px;
+      y: 5px;
+    }
+
+    &--top-right {
+      x: 21px;
+      y: 4px;
+    }
+
+    &--bottom-left {
+      x: 4px;
+      y: 21px;
+    }
+
+    &--bottom-right {
+      x: 21px;
+      y: 21px;
+    }
+  }
+}

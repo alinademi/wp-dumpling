@@ -1,0 +1,129 @@
+/* color palette */
+$color-primary: #181818;
+$color-secondary: #32373c;
+$color-tertiary: #f7ca88;
+$color-quaternary: #c3deff;
+
+$color-text: #d8d8d8;
+$color-white: #ffffff;
+
+$color-gray: #959DA5;
+$color-gray-light: #d8d8d8;
+$color-gray-lighter: #F3F4F6;
+$color-gray-dark: #24292E;
+$color-gray-darker: #121212;
+
+$color-danger: #ab4642;
+$color-success: #a1b56c;
+$color-warning: #f7ca88;
+$color-info: #7cafc2;
+
+/* syntax highlighting colors */
+$pre-color: #d8d8d8;
+$color-operator: #a1b56c;
+$color-bracket: #7cafc2;
+$color-key: #ba8baf;
+$color-parenthesis: #ab4642;
+$color-brace: #f7ca88;
+
+/* typography */
+$font-family: 'SF Mono', SFMono-Regular, Hack,
+  "Fira Code",
+  Consolas,
+  Menlo,
+  Monaco,
+  "Andale Mono",
+  "Lucida Console",
+  "Lucida Sans Typewriter",
+  "DejaVu Sans Mono",
+  "Bitstream Vera Sans Mono",
+  "Liberation Mono",
+  "Nimbus Mono L",
+  "Courier New",
+  Courier,
+  monospace;
+$font-size-x-small: 0.75rem;
+$font-size-small: 1rem;
+$font-size-medium: 1.25rem;
+$font-size-large: 1.5rem;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+/* border-radius */
+$border-radius-4: 4px;
+$border-radius-8: 8px;
+
+/* border-width */
+$border-1: 1px;
+$border-2: 2px;
+
+/* spacing */
+$spacing-none: 0;
+$spacing-small: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 2rem;
+
+/* problem solving */
+$control-button-bg-hover: lighten($color-quaternary, 20%);
+$close-modal-bg-hover: lighten($color-danger, 20%);
+
+/* css custom properties equivalents */
+:root {
+  /* color palette */
+  --dp--color-primary: #{$color-primary};
+  --dp--color-secondary: #{$color-secondary};
+  --dp--color-tertiary: #{$color-tertiary};
+  --dp--color-quaternary: #{$color-quaternary};
+  --dp--color-text: #{$color-text};
+  --dp--color-white: #{$color-white};
+  --dp--color-gray: #{$color-gray};
+  --dp--color-gray-light: #{$color-gray-light};
+  --dp--color-gray-lighter: #{$color-gray-lighter};
+  --dp--color-gray-dark: #{$color-gray-dark};
+  --dp--color-gray-darker: #{$color-gray-darker};
+  --dp--color-danger: #{$color-danger};
+  --dp--color-success: #{$color-success};
+  --dp--color-warning: #{$color-warning};
+  --dp--color-info: #{$color-info};
+  /* syntax highlighting colors */
+  --dp--code--fg-color: #{$color-text};
+  --dp--code--operator-color: #{$color-operator};
+  --dp--code--bracket-color: #{$color-bracket};
+  --dp--code--key-color: #{$color-key};
+  --dp--code--parenthesis-color: #{$color-parenthesis};
+  --dp--code--brace-color: #{$color-brace};
+  /* typography */
+  --dp--font-family: #{$font-family};
+  --dp--font-size--x-small: #{$font-size-x-small};
+  --dp--font-size-small: #{$font-size-small};
+  --dp--font-size-medium: #{$font-size-medium};
+  --dp--font-size-large: #{$font-size-large};
+  --dp--font-weight-regular: #{$font-weight-regular};
+  --dp--font-weight-bold: #{$font-weight-bold};
+  /* utility */
+  --dp--spacing-none: #{$spacing-none};
+  --dp--spacing-small: #{$spacing-small};
+  --dp--spacing-medium: #{$spacing-medium};
+  --dp--spacing-large: #{$spacing-large};
+  --dp--border-1: #{$border-1};
+  --dp--border-2: #{$border-2};
+  --dp--border-radius-4: #{$border-radius-4};
+  --dp--border-radius-8: #{$border-radius-8};
+  /* main container */
+  --dp--code--bg-color: var(--dp--color-primary);
+  --dp--main-container--border-color: var(--dp--color-gray-lighter);
+  --dp--main-container--border-radius: var(--dp--border-radius-8);
+  /* header */
+  --dp--header--bg-color: var(--dp--color-secondary);
+  --dp--header--border-color: var(--dp--color-gray);
+  --dp--header--collapse-icon-color: var(--dp--color-gray);
+  --dp--header--fg-color: var(--dp--color-tertiary);
+  /* control button */
+  --dp--control-button--bg-color: var(--dp--color-quaternary);
+  --dp--control-button--bg-hover: #{$control-button-bg-hover};
+  --dp--control-button--fg-color: var(--dp--color-gray-dark);
+  /* close modal button */
+  --dp--close-modal--bg-color: var(--dp--color-danger);
+  --dp--close-modal--bg-hover: #{$close-modal-bg-hover};
+  --dp--close-modal--fg-color: var(--dp--color-white);
+}
