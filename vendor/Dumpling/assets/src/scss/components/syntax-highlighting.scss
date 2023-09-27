@@ -17,24 +17,57 @@
     border-radius: var(--dp--border-radius);
     padding: var(--dp--spacing-medium);
 
-    .operator {
+    .dp-opr {
       color: var(--dp--code--operator-color);
     }
 
-    .bracket {
+    .dp-bkt {
       color: var(--dp--code--bracket-color);
     }
 
-    .key {
+    .dp-key {
       color: var(--dp--code--key-color);
+
+      &-num {
+        color: var(--dp--code--fg-color);
+        font-weight: var(--dp--font-weight-bold);
+      }
     }
 
-    .parenthesis {
+    .dp-prn {
       color: var(--dp--code--parenthesis-color);
     }
 
-    .brace {
+    .dp-brc {
       color: var(--dp--code--brace-color);
+    }
+
+    .dp-str {
+      color: var(--dp--code--type-color);
+    }
+
+    .dp-obj {
+      color: var(--dp--code--type-color);
+    }
+
+    .dp-arr {
+      color: var(--dp--code--type-color);
+    }
+
+    .dp-flt {
+      color: var(--dp--code--type-color);
+    }
+
+    .dp-int {
+      color: var(--dp--code--type-color);
+    }
+
+    .dp-bool {
+      color: var(--dp--code--type-color);
+    }
+
+    .dp-null {
+      color: var(--dp--code--type-color);
     }
   }
 }

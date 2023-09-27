@@ -25,6 +25,7 @@ $color-bracket: #7cafc2;
 $color-key: #ba8baf;
 $color-parenthesis: #ab4642;
 $color-brace: #f7ca88;
+$color-type: $color-parenthesis;
 
 /* typography */
 $font-family: 'SF Mono', SFMono-Regular, Hack,
@@ -92,6 +93,7 @@ $close-modal-bg-hover: lighten($color-danger, 20%);
   --dp--code--key-color: #{$color-key};
   --dp--code--parenthesis-color: #{$color-parenthesis};
   --dp--code--brace-color: #{$color-brace};
+  --dp--code--type-color: #{$color-type};
   /* typography */
   --dp--font-family: #{$font-family};
   --dp--font-size--x-small: #{$font-size-x-small};

@@ -11,48 +11,52 @@ trait RegexTrait {
 
 		$dump = htmlspecialchars( $dump, ENT_SUBSTITUTE );
 
-		// Define patterns for different components and colorizing with spans.
 		$patterns = [ 
-			'/=&gt;\s+/'  => "<span class='operator'>=&gt;</span>",
-			'/\[(.*?)\]/' => "<span class='bracket'>[</span><span class='key'>$1</span><span class='bracket'>]</span>",
-			'/\((.*?)\)/' => "<span class='parenthesis'>(</span>$1<span class='parenthesis'>)</span>",
-			'/\{/'        => "<span class='brace'>{</span>",
-			'/\}/'        => "<span class='brace'>}</span>",
+			'/=&gt;\s+/'                       => "<span class='dp-opr'>=&gt;</span>",
+			'/\[(.*?)\]/'                      => "<span class='dp-bkt'>[</span><span class='dp-key'>$1</span><span class='dp-bkt'>]</span>",
+			'/\((.*?)\)/'                      => "<span class='dp-prn'>(</span>$1<span class='dp-prn'>)</span>",
+			'/\{/'                             => "<span class='dp-brc'>{</span>",
+			'/\}/'                             => "<span class='dp-brc'>}</span>",
+			'/\bstring\b/i'                    => "<span class='dp-str'>string</span>",
+			'/\bint(eger)?\b/i'                => "<span class='dp-int'>int</span>",
+			'/\bfloat\b|\bdouble\b|\breal\b/i' => "<span class='dp-flt'>float</span>",
+			'/\barray\b/i'                     => "<span class='dp-arr'>array</span>",
+			'/\bbool(ean)?\b/i'                => "<span class='dp-bool'>bool</span>",
+			'/\bNULL\b/i'                      => "<span class='dp-null'>NULL</span>",
+			'/\bobject\b/i'                    => "<span class='dp-obj'>object</span>",
 		];
 
-		// Apply patterns to dump string.
 		foreach ( $patterns as $pattern => $replacement ) {
 			$dump = preg_replace( $pattern, $replacement, $dump );
 		}
 
-		// Remove newlines within strings
 		$dump = preg_replace_callback( '/"([\s\S]*?)"/', function ($matches) {
 			return '"' . str_replace( "\n", '', $matches[1] ) . '"';
 		}, $dump );
 
-		// Split by newline character for processing each line
-		$lines            = explode( "\n", $dump );
-		$formattedLines   = [];
-		$indentationLevel = 0;
+		$lines                    = explode( "\n", $dump );
+		$formattedLines           = [];
+		$indentationLevel         = 0;
+		$widthPerIndentationLevel = 4;
 
 		foreach ( $lines as $line ) {
 			$isCloseBrace = strpos( $line, "}" ) !== false;
 			$isOpenBrace  = strpos( $line, "{" ) !== false;
 
-			$line = trim( $line ); // Trim the line to remove extra spaces added by var_dump
+			$indentationWidth = $indentationLevel * $widthPerIndentationLevel; // Calculate width
+			$indentationGuide = "<span class='indent-guide' style='width:{$indentationWidth}px'></span>";
+			$formattedLine    = $indentationGuide . str_repeat( ' ', $indentationLevel ) . $line;
 
-			// If the line contains a closing brace, decrease the indentation level before processing the line
-			if ( $isCloseBrace ) {
+			$line = trim( $line );
+
+			if ( $isCloseBrace )
 				$indentationLevel = max( 0, $indentationLevel - 1 );
-			}
 
-			$formattedLine    = str_repeat( ' ', $indentationLevel ) . $line; // One space character for each level of indentation
+			$formattedLine    = str_repeat( ' ', $indentationLevel ) . $line;
 			$formattedLines[] = $formattedLine;
 
-			// If the line contains an opening brace, increase the indentation level after processing the line
-			if ( $isOpenBrace ) {
+			if ( $isOpenBrace )
 				$indentationLevel++;
-			}
 		}
 
 		return implode( "\n", $formattedLines );
