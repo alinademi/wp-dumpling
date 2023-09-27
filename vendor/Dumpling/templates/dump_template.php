@@ -1,13 +1,3 @@
-<?php use Dumpling\Config;
-
-// $baseUrl = Config::get( 'assetBaseUrl' );
-
-// // Sanitize URL
-// $cssUrl = filter_var( $baseUrl . 'css/styles.min.css', FILTER_SANITIZE_URL );
-// $jsUrl  = filter_var( $baseUrl . 'js/index.min.js', FILTER_SANITIZE_URL );
-?>
-
-
 <details id="dumper-container" class="dump-block" tabindex="0">
   <summary class="dump-block__summary">
 

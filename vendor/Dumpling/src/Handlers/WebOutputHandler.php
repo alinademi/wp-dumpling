@@ -7,8 +7,10 @@ use Dumpling\Handlers\AssetHandler;
 use Dumpling\Services\Logger;
 use Dumpling\Traits\RegexTrait;
 use Dumpling\Traits\ThemeDataTrait;
+use Dumpling\Interfaces\OutputInterface;
 
-class OutputHandler {
+
+class WebOutputHandler implements OutputInterface {
 	use ThemeDataTrait;
 	use RegexTrait;
 
@@ -18,7 +20,7 @@ class OutputHandler {
 		$this->templateFile = Config::get( 'templateFilePath', __DIR__ . '/../../templates/dump_template.php' );
 	}
 
-	public function printHtml( $dump, $var_name ) {
+	public function render( $dump, $var_name ) {
 
 		if ( ! $this->isTemplateFileExists() ) {
 			Logger::logError( "Template file not found." );

@@ -21,10 +21,14 @@ Config::set( 'themesPath', plugin_dir_path( __FILE__ ) . 'vendor/Dumpling/themes
 Config::set( 'logDirectory', plugin_dir_path( __FILE__ ) . 'vendor/Dumpling/logs/' );
 
 
-function dumpling( $variable ) {
-	$dumpling = new Dumpling();
-	$dumpling->dump( $variable );
+if ( ! function_exists( 'WP_CLI\Runner\maybe_auto_launch' ) ) {
+	function dumpling( $variable ) {
+		$dumpling = new Dumpling();
+		$dumpling->dump( $variable );
+	}
 }
+
+
 
 $test_array = array(
 	'one'   => '1',
