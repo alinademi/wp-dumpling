@@ -1,6 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-console.log('%c👉', "font-size: large;", path.resolve(__dirname, 'assets/dist'));
+console.log("→ \u001b[32m [PATH]: ", path.resolve(__dirname, 'assets/dist'));
 
 module.exports = {
   entry: {
