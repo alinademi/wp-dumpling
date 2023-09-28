@@ -15,7 +15,7 @@ class AssetHandler {
 			return '';
 		self::$jsIncluded = true;
 		$jsUrl            = Config::get( 'assetBaseUrl' ) . 'js/index.min.js';
-		return "<script src=\"" . htmlspecialchars( $jsUrl ) . "\"></script>";
+		return "<script defer src=\"" . htmlspecialchars( $jsUrl ) . "\"></script>";
 	}
 
 	public static function includeCSS() {
